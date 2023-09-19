@@ -19,7 +19,7 @@ let password = "";
 let passwordLength = 10;
 let checkCount = 0;
 handleSlider();
-//ste strength circle color to grey
+//initial grey colour
 setIndicator("#ccc");
 
 
@@ -89,7 +89,7 @@ async function copyContent() {
     catch(e) {
         copyMsg.innerText = "Failed";
     }
-    //to make copy wala span visible
+    //copy message visible
     copyMsg.classList.add("active");
 
     setTimeout( () => {
@@ -99,11 +99,11 @@ async function copyContent() {
 }
 
 function shufflePassword(array) {
-    //Fisher Yates Method
+    
     for (let i = array.length - 1; i > 0; i--) {
-        //random J, find out using random function
+       
         const j = Math.floor(Math.random() * (i + 1));
-        //swap number at i index and j index
+        
         const temp = array[i];
         array[i] = array[j];
         array[j] = temp;
@@ -189,9 +189,9 @@ generateBtn.addEventListener('click', () => {
     //shuffle the password
     password = shufflePassword(Array.from(password));
     console.log("Shuffling done");
-    //show in UI
+    //update in ui
     passwordDisplay.value = password;
     console.log("UI adddition done");
-    //calculate strength
+    
     calcStrength();
 });
