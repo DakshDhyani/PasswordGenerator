@@ -27,7 +27,6 @@ setIndicator("#ccc");
 function handleSlider() {
     inputSlider.value = passwordLength;
     lengthDisplay.innerText = passwordLength;
-    //or kuch bhi karna chahiye ? - HW
     const min = inputSlider.min;
     const max = inputSlider.max;
     inputSlider.style.backgroundSize = ( (passwordLength - min)*100/(max - min)) + "% 100%"
@@ -144,7 +143,7 @@ copyBtn.addEventListener('click', () => {
 })
 
 generateBtn.addEventListener('click', () => {
-    //none of the checkbox are selected
+    //no checkbox  selected
 
     if(checkCount == 0) 
         return;
